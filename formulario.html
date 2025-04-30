@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Formulário UNDB</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f2f2f7; /* cor de fundo geral */
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 40px 0;
+      display: flex;
+      justify-content: center;
+    }
+    .container {
+      background: white;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      display: inline-block;
+      max-width: 800px;
+    }
+
+    .form-container {
+      background-color: #f9f7fc; /* lilás bem claro, diferente do branco */
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* sombra para flutuar */
+      max-width: 650px;
+      width: 90%;
+      transition: box-shadow 0.3s ease;
+    }
+
+    .form-container:hover {
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15); /* aumenta a sombra ao passar o mouse */
+    }
+
+    .logo-container {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .logo-container img {
+      max-width: 150px;
+      height: auto;
+    }
+
+    h2 {
+      color: #333;
+      font-size: 20px;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 10px;
+    }
+
+    label {
+      display: block;
+      margin: 20px 0 8px;
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    select {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      box-sizing: border-box;
+      font-size: 14px;
+      background-color: #fff;
+    }
+
+    button {
+      margin-top: 25px;
+      padding: 12px 20px;
+      background-color: #673ab7;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 15px;
+      width: 100%;
+    }
+
+    button:hover {
+      background-color: #5e35b1;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="logo-container">
+    <img src="undb_logo.png" alt="Logo da UNDB">
+  </div>
+
+  <form id="pesquisaForm">
+    <div class="section">
+      <h2>Informações Pessoais</h2>
+      <label for="bairro">Qual bairro da sua residência?</label>
+      <select id="bairro" name="bairro" required>
+        <option value="">Selecione o bairro</option>
+      </select>
+    </div>
+
+    <div class="section">
+      <h2>1. Informação sobre a Educação</h2>
+      <label>1.1 Você está atualmente estudando?</label><br>
+      <div class="radio-group"></div>
+        <label><input type="radio" name="estudando" value="Sim"> Sim</label>
+        <label><input type="radio" name="estudando" value="Não"> Não</label><br>
+      </div>
+
+      <label>1.2 Se não está estudando, qual motivo de interrupção dos estudos? (Marque todas as opções que se aplicam)</label><br>
+      <div class="checkbox-group"></div>
+        <label><input type="checkbox" name="motivoInterrupcao" value="Necessidade de trabalhar"> Necessidade de trabalhar</label>
+        <label><input type="checkbox" name="motivoInterrupcao" value="Gravidez/Maternidade"> Gravidez/Maternidade</label>
+        <label><input type="checkbox" name="motivoInterrupcao" value="Violência doméstica"> Violência doméstica</label>
+        <label><input type="checkbox" name="motivoInterrupcao" value="Falta de recursos financeiros"> Falta de recursos financeiros</label>
+        <label><input type="checkbox" name="motivoInterrupcao" value="Falta de apoio"> Falta de apoio</label>
+        <label><input type="checkbox" name="motivoInterrupcao" value="Outro"> Outro</label><br>
+      </div>
+
+      <label>1.3 Se você já interrompeu os estudos no passado, foi por quanto tempo?</label><br>
+      <div class="radio-group"></div>
+        <label><input type="radio" name="tempoInterrupcao" value="Menos de 1 ano"> Menos de 1 ano</label>
+        <label><input type="radio" name="tempoInterrupcao" value="1 a 3 anos"> 1 a 3 anos</label>
+        <label><input type="radio" name="tempoInterrupcao" value="3 a 5 anos"> 3 a 5 anos</label>
+        <label><input type="radio" name="tempoInterrupcao" value="Mais de 5 anos"> Mais de 5 anos</label><br>
+      </div>
+
+      <label>1.4 Quais são as maiores dificuldades que você enfrenta para continuar sua educação? (Marque todas as opções que se aplicam)</label><br>
+      <div class="checkbox-group"></div>
+        <label><input type="checkbox" name="dificuldadesEducacao" value="Falta de tempo devido ao trabalho"> Falta de tempo devido ao trabalho</label>
+        <label><input type="checkbox" name="dificuldadesEducacao" value="Falta de apoio para cuidar dos filhos"> Falta de apoio para cuidar dos filhos</label>
+        <label><input type="checkbox" name="dificuldadesEducacao" value="Falta de recursos financeiros"> Falta de recursos financeiros</label>
+        <label><input type="checkbox" name="dificuldadesEducacao" value="Distância da instituição educacional"> Distância da instituição educacional</label>
+        <label><input type="checkbox" name="dificuldadesEducacao" value="Medo ou insegurança"> Medo ou insegurança</label>
+        <label><input type="checkbox" name="dificuldadesEducacao" value="Outro"> Outro</label><br>
+      </div>
+
+      <label>1.5 Você tem acesso à educação a distância?</label><br>
+      <div class="radio-group"></div>
+        <label><input type="radio" name="educacaoDistancia" value="Sim"> Sim</label>
+        <label><input type="radio" name="educacaoDistancia" value="Não"> Não</label><br>
+      </div>
+
+      <label>1.6 Se sim, como avalia a qualidade da educação a distância que você acessa?</label><br>
+      <div class="radio-group"></div>
+        <label><input type="radio" name="qualidadeEAD" value="Muito boa"> Muito boa</label>
+        <label><input type="radio" name="qualidadeEAD" value="Boa"> Boa</label>
+        <label><input type="radio" name="qualidadeEAD" value="Regular"> Regular</label>
+        <label><input type="radio" name="qualidadeEAD" value="Ruim"> Ruim</label>
+        <label><input type="radio" name="qualidadeEAD" value="Muito ruim"> Muito ruim</label><br>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>2. Informação sobre Saúde</h2>
+      <label>2.1 Você tem algum convênio ou plano de saúde?</label><br>
+      <div class="radio-group"></div>
+        <label><input type="radio" name="planoSaude" value="Sim"> Sim</label>
+        <label><input type="radio" name="planoSaude" value="Não"> Não</label><br>
+      </div>
+
+      <label>2.2 Você já teve acesso a posto/centro de saúde/hospital público?</label><br>
+      <div class="radio-group"></div>
+        <label><input type="radio" name="acessoSaudePublica" value="Sim"> Sim</label>
+        <label><input type="radio" name="acessoSaudePublica" value="Não"> Não</label><br>
+      </div>
+
+      <label>2.3 Você considera adequado o atendimento que recebeu na rede pública de saúde?</label><br>
+      <div class="radio-group"></div>
+        <label><input type="radio" name="atendimentoAdequado" value="Sim"> Sim</label>
+        <label><input type="radio" name="atendimentoAdequado" value="Não"> Não</label><br>
+      </div>
+
+      <label>2.4 Você considera a região que você mora precária em termos de saúde pública?</label><br>
+      <div class="radio-group"></div>
+        <label><input type="radio" name="regiaoPrecariaSaude" value="Sim"> Sim</label>
+        <label><input type="radio" name="regiaoPrecariaSaude" value="Não"> Não</label><br>
+      </div>
+    </div>
+
+    <div class="section">
+        <h2>3. INFORMAÇÕES SOBRE VIOLÊNCIA</h2>
+
+    <label>3.1 VOCÊ JÁ SOFREU ALGUM TIPO DE VIOLÊNCIA?</label><br>
+    <div class="radio-group"></div>
+        <label><input type="radio" name="violencia" value="Sim"> Sim</label>
+        <label><input type="radio" name="violencia" value="Não"> Não</label><br>
+    </div>
+
+    <label>3.2 SE SIM, QUAL(IS) TIPO(S) DE VIOLÊNCIA VOCÊ JÁ SOFREU?</label><br>
+    <div class="checkbox-group"></div>
+        <label><input type="checkbox" name="tipoViolencia" value="Física"> Violência Física</label>
+        <label><input type="checkbox" name="tipoViolencia" value="Psicológica"> Violência Psicológica/Emocional</label>
+        <label><input type="checkbox" name="tipoViolencia" value="Sexual"> Violência Sexual</label>
+        <label><input type="checkbox" name="tipoViolencia" value="Patrimonial"> Violência Patrimonial</label>
+        <label><input type="checkbox" name="tipoViolencia" value="Moral"> Violência Moral</label>
+        <label><input type="checkbox" name="tipoViolencia" value="Não se aplica"> Não se aplica</label>
+        <label><input type="checkbox" name="tipoViolencia" value="Outro"> Outro</label><br>
+    </div>
+
+    <label>3.3 QUEM FOI O AUTOR DA VIOLÊNCIA?</label><br>
+    <div class="checkbox-group"></div>
+        <label><input type="checkbox" name="autorViolencia" value="Marido"> Marido/Companheiro</label>
+        <label><input type="checkbox" name="autorViolencia" value="Ex-marido"> Ex-marido/Ex-companheiro</label>
+        <label><input type="checkbox" name="autorViolencia" value="Parente"> Parente</label>
+        <label><input type="checkbox" name="autorViolencia" value="Amigo"> Amigo/Conhecido</label>
+        <label><input type="checkbox" name="autorViolencia" value="Desconhecido"> Desconhecido</label>
+        <label><input type="checkbox" name="autorViolencia" value="Não se aplica"> Não se aplica</label>
+        <label><input type="checkbox" name="autorViolencia" value="Outro"> Outro</label><br>
+    </div>
+
+    <label>3.4 COM QUE FREQUÊNCIA VOCÊ SOFRE OU SOFREU VIOLÊNCIA?</label><br>
+    <div class="radio-group"></div>
+        <label><input type="radio" name="frequenciaViolencia" value="Uma vez"> Uma única vez</label>
+        <label><input type="radio" name="frequenciaViolencia" value="Algumas vezes"> Algumas vezes ao longo do tempo</label>
+        <label><input type="radio" name="frequenciaViolencia" value="Regularmente"> Regularmente</label>
+        <label><input type="radio" name="frequenciaViolencia" value="Atualmente"> Atualmente sofre violência</label>
+        <label><input type="radio" name="frequenciaViolencia" value="Nunca"> Nunca sofreu violência</label><br>
+    </div>
+
+    <label>3.5 VOCÊ JÁ PROCUROU AJUDA APÓS SOFRER VIOLÊNCIA?</label><br>
+    <div class="radio-group"></div>
+        <label><input type="radio" name="procurouAjuda" value="Sim"> Sim</label>
+        <label><input type="radio" name="procurouAjuda" value="Não"> Não</label>
+        <label><input type="radio" name="procurouAjuda" value="Não se aplica"> Não se aplica</label><br>
+    </div>
+
+    <label>3.6 SE SIM, ONDE VOCÊ PROCUROU AJUDA?</label><br>
+    <div class="checkbox-group"></div>
+        <label><input type="checkbox" name="ondeAjuda" value="Delegacia"> Delegacia da Mulher</label>
+        <label><input type="checkbox" name="ondeAjuda" value="Centro de Referência"> Centro de Referência da Mulher</label>
+        <label><input type="checkbox" name="ondeAjuda" value="Saúde"> Serviço de Saúde</label>
+        <label><input type="checkbox" name="ondeAjuda" value="Jurídico"> Apoio Jurídico</label>
+        <label><input type="checkbox" name="ondeAjuda" value="Familia"> Família/Amigos</label>
+        <label><input type="checkbox" name="ondeAjuda" value="Não se aplica"> Não se aplica</label>
+        <label><input type="checkbox" name="ondeAjuda" value="Outro"> Outro</label><br>
+    </div>
+
+    <label>3.7 COMO VOCÊ AVALIA A QUALIDADE DO ATENDIMENTO RECEBIDO?</label><br>
+    <div class="radio-group"></div>
+        <label><input type="radio" name="avaliacaoAtendimento" value="Muito boa"> Muito boa</label>
+        <label><input type="radio" name="avaliacaoAtendimento" value="Boa"> Boa</label>
+        <label><input type="radio" name="avaliacaoAtendimento" value="Regular"> Regular</label>
+        <label><input type="radio" name="avaliacaoAtendimento" value="Ruim"> Ruim</label>
+        <label><input type="radio" name="avaliacaoAtendimento" value="Muito ruim"> Muito ruim</label>
+        <label><input type="radio" name="avaliacaoAtendimento" value="Não se aplica"> Não se aplica</label><br>
+    </div>
+
+    <label>3.8 VOCÊ CONHECE A LEI MARIA DA PENHA?</label><br>
+    <div class="radio-group">
+        <label><input type="radio" name="lei_maria_penha" value="sim"> SIM</label>
+        <label><input type="radio" name="lei_maria_penha" value="nao"> NÃO</label>
+    </div><br>
+
+    <label>3.9 VOCÊ CONHECE OU JÁ UTILIZOU ALGUM DOS SEGUINTES SERVIÇOS?</label><br>
+    <div class="checkbox-group">
+        <label><input type="checkbox" name="servicos" value="disque_180"> DISQUE 180</label>
+        <label><input type="checkbox" name="servicos" value="casa_abrigo"> CASA ABRIGO</label>
+        <label><input type="checkbox" name="servicos" value="medida_protetiva"> MEDIDA PROTETIVA DE URGÊNCIA</label>
+        <label><input type="checkbox" name="servicos" value="outro"> OUTRO: <input type="text" name="servicos_outro"></label>
+    </div><br>
+
+    <label>3.10 A VIOLÊNCIA SOFRIDA IMPACTOU SUA SAÚDE FÍSICA?</label><br>
+    <div class="radio-group">
+        <label><input type="radio" name="saude_fisica" value="sim"> SIM</label>
+        <label><input type="radio" name="saude_fisica" value="nao"> NÃO</label>
+        <label><input type="radio" name="saude_fisica" value="nao_aplica"> NÃO SE APLICA</label>
+    </div><br>
+
+    <label>3.11 A VIOLÊNCIA SOFRIDA IMPACTOU SUA SAÚDE MENTAL?</label><br>
+    <div class="radio-group">
+        <label><input type="radio" name="saude_mental" value="sim"> SIM</label>
+        <label><input type="radio" name="saude_mental" value="nao"> NÃO</label>
+        <label><input type="radio" name="saude_mental" value="nao_aplica"> NÃO SE APLICA</label>
+    </div><br>
+
+    <label>3.12 VOCÊ PRECISOU SE AFASTAR DO TRABALHO POR CAUSA DA VIOLÊNCIA?</label><br>
+    <div class="radio-group">
+        <label><input type="radio" name="afastamento_trabalho" value="sim"> SIM</label>
+        <label><input type="radio" name="afastamento_trabalho" value="nao"> NÃO</label>
+        <label><input type="radio" name="afastamento_trabalho" value="nao_aplica"> NÃO SE APLICA</label>
+    </div><br>
+
+    <label>3.13 VOCÊ ACREDITA QUE A VIOLÊNCIA QUE SOFREU IMPACTOU SUA EDUCAÇÃO?</label><br>
+    <div class="radio-group">
+        <label><input type="radio" name="impacto_educacao" value="sim"> SIM</label>
+        <label><input type="radio" name="impacto_educacao" value="nao"> NÃO</label>
+        <label><input type="radio" name="impacto_educacao" value="nao_aplica"> NÃO SE APLICA</label>
+    </div><br>
+
+    <label>3.14 SE SIM, DE QUE FORMA A VIOLÊNCIA IMPACTOU SUA TRAJETÓRIA EDUCACIONAL?</label><br>
+    <div class="checkbox-group">
+        <label><input type="checkbox" name="impacto_educacional" value="abandono_escolar"> ABANDONO ESCOLAR</label>
+        <label><input type="checkbox" name="impacto_educacional" value="dificuldade_concentracao"> DIFICULDADE DE CONCENTRAÇÃO NOS ESTUDOS</label>
+        <label><input type="checkbox" name="impacto_educacional" value="desmotivacao"> DESMOTIVAÇÃO PARA ESTUDAR</label>
+        <label><input type="checkbox" name="impacto_educacional" value="mudanca_escola"> MUDANÇA FREQUENTE DE ESCOLA</label>
+        <label><input type="checkbox" name="impacto_educacional" value="acesso_recursos"> DIFICULDADE DE ACESSO A RECURSOS EDUCACIONAIS</label>
+        <label><input type="checkbox" name="impacto_educacional" value="nao_aplica"> NÃO SE APLICA</label>
+        <label><input type="checkbox" name="impacto_educacional" value="outro"> OUTRO: <input type="text" name="impacto_outro"></label>
+    </div><br>
+
+    <label>3.15 VOCÊ RECEBEU APOIO EDUCACIONAL APÓS TER SOFRIDO VIOLÊNCIA?</label><br>
+    <div class="radio-group">
+        <label><input type="radio" name="apoio_educacional" value="sim"> SIM</label>
+        <label><input type="radio" name="apoio_educacional" value="nao"> NÃO</label>
+        <label><input type="radio" name="apoio_educacional" value="nao_aplica"> NÃO SE APLICA</label>
+    </div><br>
+
+    <label>3.16 SE SIM, DE ONDE VEIO ESSE APOIO?</label><br>
+    <div class="checkbox-group">
+        <label><input type="checkbox" name="origem_apoio" value="escola"> ESCOLA</label>
+        <label><input type="checkbox" name="origem_apoio" value="programa_governo"> PROGRAMAS GOVERNAMENTAIS</label>
+        <label><input type="checkbox" name="origem_apoio" value="ong"> ORGANIZAÇÕES NÃO-GOVERNAMENTAIS</label>
+        <label><input type="checkbox" name="origem_apoio" value="familia_amigos"> FAMÍLIA/AMIGOS</label>
+        <label><input type="checkbox" name="origem_apoio" value="nao_aplica"> NÃO SE APLICA</label>
+        <label><input type="checkbox" name="origem_apoio" value="outro"> OUTRO: <input type="text" name="apoio_outro"></label>
+    </div><br>
+
+    <label>3.17 VOCÊ SENTE QUE A EDUCAÇÃO PODERIA SER UMA FERRAMENTA PARA SUPERAR AS CONSEQUÊNCIAS DA VIOLÊNCIA?</label><br>
+    <div class="radio-group">
+        <label><input type="radio" name="educacao_superacao" value="sim"> SIM</label>
+        <label><input type="radio" name="educacao_superacao" value="nao"> NÃO</label>
+        <label><input type="radio" name="educacao_superacao" value="nao_aplica"> NÃO SE APLICA</label>
+    </div><br>
+
+    <label>3.18 VOCÊ JÁ TEVE QUE MUDAR DE RESIDÊNCIA POR CAUSA DA VIOLÊNCIA?</label><br>
+    <div class="radio-group">
+        <label><input type="radio" name="mudanca_residencia" value="sim"> SIM</label>
+        <label><input type="radio" name="mudanca_residencia" value="nao"> NÃO</label>
+        <label><input type="radio" name="mudanca_residencia" value="nao_aplica"> NÃO SE APLICA</label>
+    </div><br>
+
+    <label>3.19 VOCÊ SE SENTE SEGURA NO SEU BAIRRO/COMUNIDADE?</label><br>
+    <div class="radio-group">
+        <label><input type="radio" name="seguranca_bairro" value="sim"> SIM</label>
+        <label><input type="radio" name="seguranca_bairro" value="nao"> NÃO</label>
+        <label><input type="radio" name="seguranca_bairro" value="as_vezes"> ÀS VEZES</label>
+    </div><br>
+
+    <label>3.20 QUAIS SÃO AS PRINCIPAIS BARREIRAS PARA DENUNCIAR A VIOLÊNCIA?</label><br>
+    <div class="checkbox-group">
+        <label><input type="checkbox" name="barreiras_denuncia" value="medo_represalia"> MEDO DE REPRESÁLIAS</label>
+        <label><input type="checkbox" name="barreiras_denuncia" value="falta_confianca"> FALTA DE CONFIANÇA NAS AUTORIDADES</label>
+        <label><input type="checkbox" name="barreiras_denuncia" value="dependencia_financeira"> DEPENDÊNCIA FINANCEIRA</label>
+        <label><input type="checkbox" name="barreiras_denuncia" value="falta_conhecimento"> FALTA DE CONHECIMENTO SOBRE OS DIREITOS</label>
+        <label><input type="checkbox" name="barreiras_denuncia" value="falta_apoio"> FALTA DE APOIO FAMILIAR/SOCIAL</label>
+        <label><input type="checkbox" name="barreiras_denuncia" value="nao_aplica"> NÃO SE APLICA</label>
+        <label><input type="checkbox" name="barreiras_denuncia" value="outro"> OUTRO: <input type="text" name="barreiras_outro"></label>
+    </div><br>
+
+    <h2>4. Comentários</h2>
+    <label>4.1 GOSTARIA DE DEIXAR ALGUM COMENTÁRIO OU SUGESTÃO SOBRE O TEMA?</label><br>
+    <div class="text-group">
+    <textarea name="comentarios" rows="4" cols="80" placeholder="Escreva aqui..."></textarea>
+    </div><br>
+
+    <button type="submit">Enviar</button>
+  </form>
+
+  <script>
+    document.getElementById("pesquisaForm").addEventListener("submit", function(event) {
+      event.preventDefault(); // impede o recarregamento da página
+
+      const formData = new FormData(event.target);
+      const dados = {};
+
+      for (const [chave, valor] of formData.entries()) {
+        if (dados[chave]) {
+          // se a chave já existe, convertemos em array
+          if (!Array.isArray(dados[chave])) {
+            dados[chave] = [dados[chave]];
+          }
+          dados[chave].push(valor);
+        } else {
+          dados[chave] = valor;
+        }
+      }
+
+      console.log("Dados coletados:", dados);
+      alert("Formulário enviado com sucesso. Obrigado por participar!");
+      window.location.href = "camp.html"; // redireciona para a nova página
+    });
+    const bairros = [
+      "Alemanha", "Anil", "Araçagi", "Bequimão", "Camboa", "Cohab", "Cohama", "Coroadinho",
+      "Fátima", "João Paulo", "Liberdade", "Maiobão", "Monte Castelo", "Olho d'Água", 
+      "Renascença", "São Cristóvão", "Turu", "Vila Embratel"
+      // Adicione mais conforme necessário
+    ];
+
+    // Preenche o <select>
+    const selectBairro = document.getElementById("bairro");
+    bairros.sort().forEach(bairro => {
+      const option = document.createElement("option");
+      option.value = bairro;
+      option.textContent = bairro;
+      selectBairro.appendChild(option);
+    });
+  </script>
+</body>
+</html>
+ 
