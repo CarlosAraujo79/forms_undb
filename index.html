@@ -387,6 +387,32 @@
         }
       }
 
+       // Gera texto formatado
+        let conteudoTxt = '--- RESPOSTAS DO FORMULÁRIO ---\n\n';
+        for (const chave in dados) {
+          const valor = dados[chave];
+          conteudoTxt += `${chave}: ${Array.isArray(valor) ? valor.join(', ') : valor}\n`;
+        }
+
+        // Cria Blob e link de download
+        const blob = new Blob([conteudoTxt], { type: 'text/plain;charset=utf-8' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'respostas_formulario.txt';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+
+        alert("Formulário enviado com sucesso. As respostas foram salvas!");
+
+        // Redireciona após o download
+        setTimeout(() => {
+          window.location.href = "camp.html";
+        }, 1000);
+      
+
       console.log("Dados coletados:", dados);
       alert("Formulário enviado com sucesso. Obrigado por participar!");
       window.location.href = "camp.html"; // redireciona para a nova página
@@ -409,4 +435,3 @@
   </script>
 </body>
 </html>
- 
